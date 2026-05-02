@@ -1,18 +1,24 @@
-# DS RPC 01: Ewiger - Internal RAG Chatbot with RBAC
+# Ewiger: Enterprise RAG Chatbot with RBAC
 
-This is the completed solution for the [Resume Project Challenge](https://codebasics.io/challenge/codebasics-gen-ai-data-science-resume-project-challenge). **Ewiger** is an AI-powered internal chatbot that uses Retrieval-Augmented Generation (RAG) and Role-Based Access Control (RBAC) to ensure users only see data they are authorized to access.
+**Ewiger** is a secure, production-ready internal chatbot designed to handle sensitive company data. Built on a **Retrieval-Augmented Generation (RAG)** architecture, it allows employees to query internal documentation while strictly enforcing **Role-Based Access Control (RBAC)**.
 
-![alt text](resources/RPC_01_Thumbnail.jpg)
+Unlike standard chatbots, Ewiger "thinks" before it speaks. It verifies the user's identity and department (HR, Finance, Engineering, etc.) and uses **metadata filtering** to ensure that confidential information never leaks to unauthorized users.
 
-### 🔐 Roles & Permissions
-- **engineering**: Technical docs & general info.
-- **finance**: Financial reports & general info.
-- **hr**: Employee records & general info.
-- **marketing**: Campaign metrics & general info.
-- **c-level**: Full access to all departments.
-- **general**: Basic company policies and FAQs only.
+### 🌟 Key Features
+- **Security-First RAG**: Implements metadata-level filtering within the vector database to restrict data retrieval based on user roles.
+- **Role-Based Access Control (RBAC)**: Supports multiple roles (Engineering, Finance, HR, Marketing, and C-Level) with unique permission sets.
+- **Intelligent Responses**: Powered by **Llama 3.1 (via Groq)** for lightning-fast, conversational, and context-aware answers.
+- **Source Transparency**: Every answer includes citations to the specific internal documents used as context.
+- **Zero-Hallucination Guardrails**: Strict system prompting ensures the assistant only answers based on provided company data.
 
----
+### 🛠️ The Tech Stack
+- **Backend**: FastAPI (Python)
+- **Frontend**: Streamlit
+- **Vector Database**: ChromaDB
+- **LLM**: Llama 3.1 (8B/70B) via Groq Cloud API
+- **Embeddings**: HuggingFace `all-MiniLM-L6-v2`
+- **Environment Management**: Python-Dotenv for secure API key handling
+
 
 ## 🚀 How to Run the Project
 
